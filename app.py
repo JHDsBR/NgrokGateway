@@ -42,7 +42,10 @@ def acessar_api(e):
         body = request.data
     except:
         body={}
-    req = requests.get(f'http://127.0.0.1:{port}/{api}/{rota}', json=body)
+
+    print(body)
+
+    req = requests.get(f'http://127.0.0.1:{port}/{api}/{rota}', data=body)
 
     if req.status_code == 200:
         return req.json()
