@@ -24,9 +24,9 @@ class Ngrok():
             # Executa o comando com sudo
             # subprocess.run(comando_com_sudo, shell=True)
             senha = os.environ.get("VM_SENHA")
-            processo = subprocess.Popen(f'sudo ngrok tunnel --label edge={os.environ.get("EDGE_TOKEN")} http://localhost:{port}', shell=True)
+            processo = subprocess.run(f'sudo ngrok tunnel --label edge={os.environ.get("EDGE_TOKEN")} http://localhost:{port}', shell=True)
             # senha = b'SUA_SENHA_AQUI\n'  # Substitua pela sua senha
-            # processo.stdin.write(str(senha+'\n').encode("utf-8"))
+            processo.stdin.write(str(senha+'\n').encode("utf-8"))
             processo.stdin.flush()
             # subprocess.Popen(f'{senha}', shell=True)
 
