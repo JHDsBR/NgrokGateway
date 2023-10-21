@@ -43,8 +43,6 @@ def acessar_api(e):
     except:
         body={}
 
-    print(body)
-
     req = requests.get(f'http://127.0.0.1:{port}/{api}/{rota}', data=body)
 
     if req.status_code == 200:
