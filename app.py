@@ -65,8 +65,8 @@ def handle_exception(e):
     # Aqui você pode adicionar o código para manipular a exceção
     print("[!!!!!!!!!!]")
     
-        with open("error.txt", "w") as file:
-            file.write(str(e))
+    with open("error.txt", "w") as file:
+        file.write(str(e))
     return {"success":False, "msg":"houve algum erro interno", "exception":str(e)}
 
 
