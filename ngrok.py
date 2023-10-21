@@ -16,13 +16,13 @@ class Ngrok():
             print(subprocess.Popen(f'{caminho_para_exe} tunnel --label edge={os.environ.get("EDGE_TOKEN")} http://localhost:{port}', shell=True))
         else:
             # Comando que você deseja executar com sudo
-            comando = "sudo ls /root"  # Substitua pelo seu próprio comando
+            # comando = "sudo ls /root"  # Substitua pelo seu próprio comando
 
             # Concatena a senha ao comando (via echo e pipe)
-            comando_com_sudo = f'echo "{senha}" | {comando}'
+            # comando_com_sudo = f'echo "{senha}" | {comando}'
 
             # Executa o comando com sudo
-            subprocess.run(comando_com_sudo, shell=True)
+            # subprocess.run(comando_com_sudo, shell=True)
             senha = os.environ.get("VM_SENHA")
             print(subprocess.Popen(f'echo "{senha}" | sudo {caminho_para_exe} tunnel --label edge={os.environ.get("EDGE_TOKEN")} http://localhost:{port}', shell=True))
 
