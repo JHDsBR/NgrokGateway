@@ -59,6 +59,7 @@ def acessar_api(e):
 @app.errorhandler(Exception)
 def handle_exception(e):
     # Aqui você pode adicionar o código para manipular a exceção
+    print("[!!!!!!!!!!]")
     return {"success":False, "msg":"houve algum erro interno", "exception":str(e)}
 
 
