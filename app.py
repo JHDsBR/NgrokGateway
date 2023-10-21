@@ -11,9 +11,9 @@ import logging
 
 load_dotenv(".env")
 
-requests.packages.urllib3.disable_warnings()
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.ERROR)
+# requests.packages.urllib3.disable_warnings()
+# log = logging.getLogger('werkzeug')
+# log.setLevel(logging.ERROR)
 
 if (environ.get("IS_DEVELOPMENT") or "false").lower() == "true":
     print("VERSÂO DE TESTE")
