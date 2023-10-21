@@ -40,6 +40,8 @@ def acessar_api(e):
 
     try:
         body = request.get_json()
+        with open("json_body.txt", "w") as file:
+            file.write(str(body))
     except:
         body={}
 
@@ -48,6 +50,8 @@ def acessar_api(e):
     print()
     print(">>>>>>>>>>",request.data)
 
+    with open("data_body.txt", "w") as file:
+        file.write(str(request.data))
     req = requests.get(f'http://127.0.0.1:{port}/{api}/{rota}', json=body, data=body)
 
     if req.status_code == 200:
@@ -60,6 +64,9 @@ def acessar_api(e):
 def handle_exception(e):
     # Aqui você pode adicionar o código para manipular a exceção
     print("[!!!!!!!!!!]")
+    
+        with open("error.txt", "w") as file:
+            file.write(str(e))
     return {"success":False, "msg":"houve algum erro interno", "exception":str(e)}
 
 
