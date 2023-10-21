@@ -56,6 +56,7 @@ def handle_exception(e):
 def add_api(nome):
     
     if apis.api_existe(nome):
+        api = apis.add_nova_api(nome)
         return {"success":True, "msg":f"Api ({nome}) já existia", "port":api.port}
         
     api = apis.add_nova_api(nome)
