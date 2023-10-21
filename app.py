@@ -43,7 +43,10 @@ def acessar_api(e):
     except:
         body={}
 
-    # print()
+    print()
+    print(">>>>>>>>>>",request.get_json())
+    print()
+    print(">>>>>>>>>>",request.data)
 
     req = requests.get(f'http://127.0.0.1:{port}/{api}/{rota}', json=body, data=body)
 
