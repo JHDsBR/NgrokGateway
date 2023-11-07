@@ -87,8 +87,8 @@ def Home():
 
 port = environ.get("NGROK_PORT") or 5110
 
-# ngk = Ngrok()
-# ngk.start(port)
+ngk = Ngrok()
+ngk.start(port)
 
 # rotas = [rule.rule for rule in app.url_map.iter_rules() if not rule.rule.startswith("/static")]
 
